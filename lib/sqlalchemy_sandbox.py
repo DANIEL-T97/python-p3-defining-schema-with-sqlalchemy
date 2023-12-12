@@ -8,9 +8,11 @@ Base = declarative_base()
 class Student(Base):
     __tablename__ = 'Student'
 
-    id = Column (Integer(), Primary_key = TRUE)
+    id = Column (Integer(), Primary_key = True)
     name = Column (String())
     pass
 
 if __name__ == '__main__':
+    engine = create_engine('sqlite:///students.db')
+    Base.metadata.Create_all(engine)
     pass
